@@ -9,6 +9,7 @@ return {
   lazy = false, -- neo-tree will lazily load itself
   config = function()
     vim.keymap.set('n', '<D-b>', ":Neotree toggle<CR>")
+    vim.keymap.set("n", "<leader>nf", ":Neotree focus<CR>")
 
     require("neo-tree").setup({
       window = {
