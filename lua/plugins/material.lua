@@ -6,11 +6,11 @@ return {
 
     require('material').setup({
       contrast = {
-        terminal = false, -- Enable contrast for the built-in terminal
+        terminal = true, -- Enable contrast for the built-in terminal
         sidebars = true, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
         floating_windows = true, -- Enable contrast for floating windows
         cursor_line = true, -- Enable darker background for the cursor line
-        lsp_virtual_text = true, -- Enable contrasted background for lsp virtual text
+        lsp_virtual_text = false, -- Enable contrasted background for lsp virtual text
         non_current_windows = false, -- Enable contrasted background for non-current windows
         filetypes = {}, -- Specify which filetypes get the contrasted (darker) background
       },
@@ -52,7 +52,7 @@ return {
         -- "nvim-web-devicons",
         -- "rainbow-delimiters",
         -- "sneak",
-        -- "telescope",
+        "telescope",
         -- "trouble",
         -- "which-key",
       },
@@ -64,7 +64,7 @@ return {
         eob_lines = false -- Hide the end-of-buffer lines
       },
       high_visibility = {
-        lighter = false, -- Enable higher contrast text for lighter style
+        lighter = true, -- Enable higher contrast text for lighter style
         darker = true -- Enable higher contrast text for darker style
       },
       lualine_style = "default", -- Lualine style ( can be 'stealth' or 'default' )

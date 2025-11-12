@@ -14,6 +14,6 @@ vim.opt.shiftwidth = 2                          -- number of spaces to use for (
 vim.opt.smarttab = true                         -- <Tab> in leading whitespace indents by 'shiftwidth'
 vim.opt.softtabstop = 2                         -- number of columns between two soft tab stops
 vim.opt.spell = true                            -- enable spell checking
-vim.opt.spelllang = en_us,es_es                 -- language(s) to do spell checking for
+vim.opt.spelllang = { "en_us", "es" }           -- language(s) to do spell checking for
 vim.opt.tabstop = 2                             -- number of columns between two tab stops
 vim.opt.title = true                            -- let Vim set the title of the window
