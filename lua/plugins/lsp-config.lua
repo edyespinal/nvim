@@ -1,24 +1,21 @@
 return {
-  -- Core LSP & tools
-  { "neovim/nvim-lspconfig" },
-  { "williamboman/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end
-  },
-  { "williamboman/mason-lspconfig.nvim", 
-  config = function()
-    require("mason-lspconfig").setup({
-      ensure_installed = {
-        "lua_ls",
-        "ts_ls"
-      },
-    })
-  end
-  },
-
-  -- Optional completion
-  { "hrsh7th/nvim-cmp" },
-  { "hrsh7th/cmp-nvim-lsp" },
-  { "L3MON4D3/LuaSnip" },
+	-- Core LSP & tools
+	{ "neovim/nvim-lspconfig" },
+	{
+		"williamboman/mason.nvim",
+		config = function()
+			require("mason").setup()
+		end,
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		config = function()
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"lua_ls",
+					"ts_ls",
+				},
+			})
+		end,
+	},
 }
