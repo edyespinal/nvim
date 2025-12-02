@@ -6,6 +6,7 @@ return {
 	---@type snacks.Config
 	opts = {
 		dashboard = { enabled = true },
+		statuscolumn = { enabled = false },
 	},
 	keys = {
 		{
