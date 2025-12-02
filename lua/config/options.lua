@@ -15,7 +15,21 @@ vim.opt.smarttab = true -- <Tab> in leading whitespace indents by 'shiftwidth'
 vim.opt.softtabstop = 2 -- number of columns between two soft tab stops
 vim.opt.spell = true -- enable spell checking
 vim.opt.spelllang = { "en_us", "es" } -- language(s) to do spell checking for
+vim.opt.spellsuggest = "best" -- show suggestions for misspelled words
 vim.opt.tabstop = 2 -- number of columns between two tab stops
 vim.opt.title = true -- let Vim set the title of the window
 vim.opt.wrap = false -- long lines wrap and continue on the next line
 
+local M = {}
+
+function M.setup()
+	vim.cmd([[
+    augroup IgnoreImportSpell
+      autocmd!
+      autocmd Syntax * syntax match NoSpellImport /^import .*$/ contains=@NoSpell
+      autocmd Syntax * highlight link NoSpellImport Normalaugroup IgnoreImportSpell
+    augroup END
+  ]])
+end
+
+return M

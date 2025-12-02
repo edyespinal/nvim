@@ -21,3 +21,13 @@ vscode
 visualstudio
 colorscheme
 ibl
+sp
+whitespace
+shiftwidth
+localleader
+spaceauto
+Keymap
+autocompletion
+autocomplete
+frontend
+boolean
