@@ -4,14 +4,17 @@ return {
 	config = function()
 		require("mini.move").setup({
 			mappings = {
-				left = "<M-h>",
-				right = "<M-l>",
-				down = "<M-j>",
-				up = "<M-k>",
-				line_left = "<M-h>",
-				line_right = "<M-l>",
-				line_down = "<M-j>",
-				line_up = "<M-k>",
+				-- Move visual selection
+				left = "<M-Left>",
+				right = "<M-Right>",
+				down = "<M-Down>",
+				up = "<M-Up>",
+
+				-- Move current line in normal mode
+				line_left = "<M-Left>",
+				line_right = "<M-Right>",
+				line_down = "<M-Down>",
+				line_up = "<M-Up>",
 			},
 			options = {
 				reindent_linewise = true,
