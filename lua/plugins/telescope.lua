@@ -11,7 +11,7 @@ return {
 		local builtin = require("telescope.builtin")
 
 		vim.keymap.set("n", "<D-p>", builtin.find_files)
-		vim.keymap.set("n", "<D-F>", ":lua require('telescope').extensions.live_grep_args.live_grep_args()")
+		vim.keymap.set("n", "<D-F>", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 
 		telescope.setup({
 			defaults = {
