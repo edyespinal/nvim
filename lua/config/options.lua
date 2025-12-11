@@ -26,8 +26,30 @@ function M.setup()
 	vim.cmd([[
     augroup IgnoreImportSpell
       autocmd!
-      autocmd Syntax * syntax match NoSpellImport /^import .*$/ contains=@NoSpell
+
+      "Ignore import statements
+      autocmd Syntax * syntax match NoSpellImport /^\s*import.*$/ contains=@NoSpell
       autocmd Syntax * highlight link NoSpellImport Normalaugroup IgnoreImportSpell
+
+      "Ignore snake_case
+      autocmd Syntax * syntax match NoSpellSnakeCase /\b[a-z0-9]+(_[a-z0-9]+)+\b/ contains=@NoSpell
+      autocmd Syntax * highlight link NoSpellSnakeCase Normalaugroup
+
+      "Ignore SCREAMING_CASE
+      autocmd Syntax * syntax match NoSpellSCREAMING_CASE /\b[A-Z0-9]+(_[A-Z0-9]+)+\b/ contains=@NoSpell
+      autocmd Syntax * highlight link NoSpellSCREAMING_CASE Normal
+
+      "Ignore camelCase"
+      autocmd Syntax * syntax match NoSpellCamelCase /\b[a-z]+[A-Z][a-zA-Z0-9]*\b/ contains=@NoSpell
+      autocmd Syntax * highlight link NoSpellCamelCase Normal
+
+      "Ignore PascalCase
+      autocmd Syntax * syntax match NoSpellPascalCase /\b[A-Z][a-zA-Z0-9]*[A-Z][a-zA-Z0-9]*\b/ contains=@NoSpell
+      autocmd Syntax * highlight link NoSpellPascalCase Normal
+
+      "Ignore kebab-case
+      autocmd Syntax * syntax match NoSpellKebabCase /\b[a-z0-9]+(-[a-z0-9]+)+\b/ contains=@NoSpell
+      autocmd Syntax * highlight link NoSpellKebabCase Normal
     augroup END
   ]])
 end
