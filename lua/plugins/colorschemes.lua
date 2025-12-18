@@ -70,11 +70,9 @@ return {
 				lualine_style = "default", -- Lualine style ( can be 'stealth' or 'default' )
 				async_loading = true, -- Load parts of the theme asynchronously for faster startup (turned on by default)
 				custom_colors = nil, -- If you want to override the default colors, set this to a function
-				custom_highlights = function(_)
-					return {
-						["@tag"] = { fg = "#FFCB6B" },
-					}
-				end,
+				custom_highlights = {
+					["@tag"] = { fg = "#FFCB6B" },
+				},
 			})
 
 			vim.g.material_style = "palenight"
