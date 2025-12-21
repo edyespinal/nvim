@@ -50,7 +50,7 @@ return {
 					"nvim-notify",
 					-- "nvim-tree",
 					-- "nvim-web-devicons",
-					"rainbow-delimiters",
+					-- "rainbow-delimiters",
 					-- "sneak",
 					"telescope",
 					-- "trouble",
