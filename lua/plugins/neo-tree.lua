@@ -1,3 +1,13 @@
+local function get_sidebar_width()
+	local columns = vim.o.columns
+
+	if columns < 100 then
+		return 25
+	else
+		return math.floor(columns * 0.20)
+	end
+end
+
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v3.x",
@@ -15,6 +25,7 @@ return {
 		require("neo-tree").setup({
 			window = {
 				position = "right",
+				width = get_sidebar_width(),
 			},
 			filesystem = {
 				filtered_items = {

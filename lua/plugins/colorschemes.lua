@@ -10,7 +10,7 @@ return {
 					cursor_line = true, -- Enable darker background for the cursor line
 					lsp_virtual_text = false, -- Enable contrasted background for lsp virtual text
 					non_current_windows = false, -- Enable contrasted background for non-current windows
-					filetypes = {}, -- Specify which filetypes get the contrasted (darker) background
+					filetypes = {}, -- Specify which file types get the contrasted (darker) background
 				},
 				styles = { -- Give comments style such as bold, italic, underline etc.
 					comments = { italic = true },
@@ -23,7 +23,7 @@ return {
 					operators = {},
 					types = {},
 				},
-				plugins = { -- Uncomment the lugins that you use to highlight them
+				plugins = { -- Un-comment the plugins that you use to highlight them
 					-- Available plugins:
 					-- "blink",
 					-- "coc",
@@ -71,7 +71,10 @@ return {
 				async_loading = true, -- Load parts of the theme asynchronously for faster startup (turned on by default)
 				custom_colors = nil, -- If you want to override the default colors, set this to a function
 				custom_highlights = {
-					["@tag"] = { fg = "#FFCB6B" },
+					["@tag"] = { fg = "#ffcb6b" },
+					LineNr = { fg = "#ffeb3b" },
+					LineNrAbove = { fg = "#6d728e" },
+					LineNrBelow = { fg = "#6d728e" },
 				},
 			})
 

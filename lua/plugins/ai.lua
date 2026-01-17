@@ -22,12 +22,20 @@ return {
 		---@module 'avante'
 		---@type avante.Config
 		opts = {
-			-- add any opts here
-			-- this file can contain specific instructions for your project
 			instructions_file = "avante.md",
-			-- for example
-			provider = "claude",
+			provider = "ollama",
+			auto_suggestions = "ollama",
 			providers = {
+				ollama = {
+					endpoint = "http://127.0.0.1:11434",
+					model = "qwen2.5-coder:7b", -- The best model for this setup
+					timeout = 30000,
+					extra_request_body = {
+						-- Use num_ctx to give the "Cascade" more room to think
+						num_ctx = 16384,
+						temperature = 0,
+					},
+				},
 				claude = {
 					endpoint = "https://api.anthropic.com",
 					model = "claude-sonnet-4-20250514",
