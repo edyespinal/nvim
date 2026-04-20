@@ -5,3 +5,7 @@ vim.keymap.set({ "n", "v" }, "<D-s>", ":w<CR>", { silent = true, desc = "Save fi
 vim.keymap.set("n", "<leader><Right>", ":bnext<CR>", { silent = true, desc = "Next buffer" })
 vim.keymap.set("n", "<leader><Left>", ":bprevious<CR>", { silent = true, desc = "Previous buffer" })
 vim.keymap.set("n", "<leader>q", ":bdelete<CR>", { silent = true, desc = "Close buffer" })
+
+-- General
+vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>", { silent = true, desc = "Clear search" })
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })

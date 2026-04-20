@@ -6,19 +6,20 @@ vim.g.have_nerd_font = true
 vim.opt.clipboard = "unnamedplus" -- use the clipboard as the unnamed register
 vim.opt.expandtab = true -- use spaces when <Tab> is inserted
 vim.opt.incsearch = true -- highlight match while typing search pattern
-vim.opt.number = true -- print the line number in front of each line
+vim.opt.number = false -- print the line number in front of each line
 vim.opt.numberwidth = 4 -- number of columns used for the line number
 vim.opt.relativenumber = true -- show relative line number in front of each line
 vim.opt.ruler = true -- show cursor line and column in the status line
 vim.opt.shiftwidth = 2 -- number of spaces to use for (auto)indent step
 vim.opt.smarttab = true -- <Tab> in leading whitespace indents by 'shiftwidth'
 vim.opt.softtabstop = 2 -- number of columns between two soft tab stops
-vim.opt.spell = true -- enable spell checking
+vim.opt.spell = false -- enable spell checking
 vim.opt.spelllang = { "en_us", "es" } -- language(s) to do spell checking for
 vim.opt.spellsuggest = "best" -- show suggestions for misspelled words
 vim.opt.tabstop = 2 -- number of columns between two tab stops
 vim.opt.title = true -- let Vim set the title of the window
 vim.opt.wrap = false -- long lines wrap and continue on the next line
+vim.filetype.add({ extension = { dax = "sql" } })
 
 local M = {}
 

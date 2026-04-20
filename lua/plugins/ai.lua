@@ -14,47 +14,26 @@ return {
 	},
 	{
 		"yetone/avante.nvim",
-		build = vim.fn.has("win32") ~= 0
-				and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
-			or "make",
 		event = "VeryLazy",
+		lazy = false,
 		version = false, -- Never set this value to "*"! Never!
-		---@module 'avante'
-		---@type avante.Config
 		opts = {
-			instructions_file = "avante.md",
-			provider = "ollama",
-			auto_suggestions = "ollama",
 			providers = {
-				ollama = {
-					endpoint = "http://127.0.0.1:11434",
-					model = "qwen2.5-coder:7b", -- The best model for this setup
+				provider = "gemini",
+				gemini = {
+					endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
+					model = "gemini-2.0-flash",
 					timeout = 30000,
 					extra_request_body = {
-						-- Use num_ctx to give the "Cascade" more room to think
-						num_ctx = 16384,
+						max_tokens = 4096,
 						temperature = 0,
 					},
 				},
-				claude = {
-					endpoint = "https://api.anthropic.com",
-					model = "claude-sonnet-4-20250514",
-					timeout = 30000, -- Timeout in milliseconds
-					extra_request_body = {
-						temperature = 0.75,
-						max_tokens = 20480,
-					},
-				},
-				moonshot = {
-					endpoint = "https://api.moonshot.ai/v1",
-					model = "kimi-k2-0711-preview",
-					timeout = 30000, -- Timeout in milliseconds
-					extra_request_body = {
-						temperature = 0.75,
-						max_tokens = 32768,
-					},
-				},
 			},
+		},
+		behaviour = {
+			auto_suggestions = false,
+			enable_cursor_planning_mode = true,
 		},
 		dependencies = {
 			"nvim-lua/plenary.nvim",
