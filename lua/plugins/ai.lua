@@ -30,6 +30,12 @@ return {
 					},
 				},
 			},
+			mappings = {
+				ask = "<leader>ia",
+				edit = "<leader>ie",
+				refresh = "<leader>ir",
+				suggestions = "<leader>is",
+			},
 		},
 		behaviour = {
 			auto_suggestions = false,

@@ -9,3 +9,4 @@ vim.keymap.set("n", "<leader>q", ":bdelete<CR>", { silent = true, desc = "Close 
 -- General
 vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>", { silent = true, desc = "Clear search" })
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })
+vim.keymap.set("n", "<leader>A", "ggVG", { silent = true, desc = "Select all" })
